@@ -66,7 +66,7 @@
                     <h4>Leave a Review</h4>
                     <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
                         
-                        <div class="mb-3 mt-3">
+                        <div class="">
                             <label for="rating" class="form-label mb-1">Rating</label>
 
                             <fieldset class="starability-slot">
@@ -84,8 +84,8 @@
                             </fieldset>
                         </div>
     
-                        <div class="mb-3 mt-3 review-stars">
-                            <label for="comment" class="form-label">Comments</label>
+                        <div class="review-stars">
+                            <label for="comment" class="form-label">Comments</label><br>
                             <textarea class="" name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
     
                             <div class="invalid-feedback">
@@ -102,7 +102,7 @@
                     <p><b>All Reviews</b></p> 
                     <div class="row">
                         <% for (review of listing.reviews) { %>
-                                <div class="card col-4 ms-3 mb-3" style="margin-right: 20px;">
+                                <div class="card col-5 ms-3 mb-3" style="margin-right: 20px;">
                                     <div class="card-body">
                                         <h5 class="card-title">@<%= review.author.username %></h5>
                                         <p class="starability-result" data-rating="<%= review.rating %>"></p>
