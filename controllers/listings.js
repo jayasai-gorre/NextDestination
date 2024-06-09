@@ -19,10 +19,10 @@ module.exports.showListing = async (req, res) => {
       .populate({ path: "reviews", populate: { path: "author" } })
       .populate("owner");
     // console.log(listing);
-    if (!listing) {
-      req.flash("error", "The Listing you requested doesnot exist");
-      return res.redirect("/listings");
-    }
+    // if (!listing) {
+    //   req.flash("error", "The Listing you requested doesnot exist");
+    //   return res.redirect("/listings");
+    // }
     res.render("listings/show.ejs", { listing });
 };
 
@@ -44,7 +44,7 @@ module.exports.createListing = async (req, res) => {
     newListing.geometry =  response.body.features[0].geometry;
 
     let savedListing = await newListing.save();
-    console.log(savedListing);
+    // console.log(savedListing);
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
 };

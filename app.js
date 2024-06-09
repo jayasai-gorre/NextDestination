@@ -22,6 +22,7 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
+const MONGO_URL = "mongodb://127.0.0.1:27017/nextdestination";
 
 main()
   .then(() => {
@@ -49,6 +50,8 @@ store.on("error", () => {
 })
 
 
+
+
 const sessionOptions = {
   store,
   secret: "supersecretcodesting",
@@ -73,6 +76,10 @@ passport.use(new LocalStrategy(User.authenticate())); // authenticating the user
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.get("/curr", (req, res) => {
+  console.log(res.locals.currUser);
+})
+
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -94,7 +101,7 @@ app.use((req, res, next) => {
 
 
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/nextdestination";
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));

@@ -20,23 +20,31 @@
         .review-stars {
             width: 100px;
         }
+
+        .map-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
     }
+
 </style>
 
 <body>
     <div class="row">
-        <div class="col-8 offset-3">
+        <div class="col-lg-6 offset-lg-3">
             <h3><%= listing.title %></h3>
         </div>
 
-            <div class="card col-6 offset-3 listing-card">
+            <div class="card col-lg-6 col-md-8 col-sm-10 offset-lg-3 listing-card">
                 <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="...">
                 <div class="card-body">
                     <p class="card-text mb-0"><b><i>Listing owner: </i></b><%= listing.owner.username %></p>
                     <p class="card-text mb-0"><%= listing.description %></p>
-                    <p class="card-text mb-0">&#8377; <%= listing.price.toLocaleString("en-IN") %></p>
-                    <p class="card-text mb-0"><%= listing.location %></p>
-                    <p class="card-text mb-0"><%= listing.country %></p>
+                    <p class="card-text mb-0"><i>Price</i>: &nbsp;&#8377;<%= listing.price.toLocaleString("en-IN") %></p>
+                    <p class="card-text mb-0"><i>Location</i>:&nbsp;<%= listing.location %></p>
+                    <p class="card-text mb-0"><i>Country</i>:&nbsp;<%= listing.country %></p>
                 </div>
             </div>
 
@@ -52,7 +60,7 @@
             <% } %>
             
             
-            <div class="col-8 offset-3 mb-3">
+            <div class="col-lg-8 offset-lg-3 col-sm-10 mb-3">
                 <% if (currUser) { %>
                     <hr>
                     <h4>Leave a Review</h4>
@@ -78,7 +86,7 @@
     
                         <div class="mb-3 mt-3 review-stars">
                             <label for="comment" class="form-label">Comments</label>
-                            <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+                            <textarea class="" name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
     
                             <div class="invalid-feedback">
                                 Please add comments for review
@@ -94,7 +102,7 @@
                     <p><b>All Reviews</b></p> 
                     <div class="row">
                         <% for (review of listing.reviews) { %>
-                                <div class="card col-lg-3 col-md-4 col-sm-5 ms-3 mb-3" style="margin-right: 20px;">
+                                <div class="card col-4 ms-3 mb-3" style="margin-right: 20px;">
                                     <div class="card-body">
                                         <h5 class="card-title">@<%= review.author.username %></h5>
                                         <p class="starability-result" data-rating="<%= review.rating %>"></p>
@@ -112,7 +120,7 @@
 
             </div>
 
-            <div class="col-4 offset-3 mb-3">
+            <div class="map-div col-4 offset-3 mb-3">
                 <h3 class="map-title">Where you'll be</h3>
 
                 <div id="map"></div>
