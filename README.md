@@ -20,6 +20,7 @@ Next Destination is a full-stack web application built with Node.js, Express.js,
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB (for storing user data, hotel listings, and reviews)
 - **APIs**: Mapbox API (for geocoding), Cloudinary (for image storage)
+- **Architecture**: Follows the MVC (Model-View-Controller) pattern for better code organization and separation of concerns.
 
 ## 🚀 Getting Started
 
