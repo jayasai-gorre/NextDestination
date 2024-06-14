@@ -33,8 +33,4 @@ Next Destination is a full-stack web application built with Node.js, Express.js,
 
 Contributions are welcome! Fork the repository and submit a pull request with your enhancements.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
