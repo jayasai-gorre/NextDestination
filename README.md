@@ -2,6 +2,9 @@
 
 Next Destination is a full-stack web application built with Node.js, Express.js, and MongoDB, designed to help users list and discover hotels around the world.
 
+<img width="1400" alt="image" src="https://github.com/user-attachments/assets/d44d13ed-3576-4a75-aa3e-d8e48ee81137">
+
+
 ## ✨ Features
 
 - **Signup and Login**: Secure authentication system using JWT tokens and Passport.js for hashing and salting passwords.
